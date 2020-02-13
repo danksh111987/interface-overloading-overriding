@@ -1,0 +1,51 @@
+Observations
+===========
+
+case1:
+abstract methods do not have body blocks{} in interface.
+
+Case 2: 
+what if we make interface methods private or protected.
+Private\protected modifiers are not allowed in Interface methods.
+Only public, abstract,default, static and strictfp are permitted
+
+
+
+Parent and child class can have same method of same declaration and definition. 
+Parent and child both can have same method signature and different definition.On call, it is printing child class method definition on calling 
+from child object .methodname.
+
+
+
+Parent class method is not defined in child class.
+After Child class object creation, dot will show all methods from child class as well as parent class.
+If you call parent class method which is not present in child class, definition will come from parent class only.
+
+
+Overriding: (Parent child relationship required)
+
+Private method from parent class is not accessible in MyGame class until MyGame class extends parent class.
+Protected method from parent class is accessible in MyGame class as this will be accessible within package.
+Default methods are not allowed in class, only allowed in interface.
+Parent static method cannot be overridden in child class.
+Strictfp method allowed in parent class which can be overridden in child class
+
+
+Overloading: (No Parent child relationship required)
+
+public overloaded method can be called in MyGame class without inheritance.
+Private overloaded method cannot be called in MyGame until it extends Puppy class.
+
+Static overloaded method in puppy class should be accessed in MyGame class in different way like.
+Instead of objectname.methodname
+Classname.method name
+Instead of:
+objpuppy.bark("Boh Boh");
+use:
+ChildPuppy.bark("Boh Boh");
+
+OR
+
+remove static modifier from Puppy class
+OR
+Add @SuppressWarnings("static-access") on top of main method to access static overloaded method in MyGame class.
